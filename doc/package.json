@@ -1,0 +1,16 @@
+{
+  "name": "majora-doc",
+  "description": "doc of majora",
+  "main": "index.js",
+  "author": "iinti",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "packageManager": "yarn@4.0.2",
+  "devDependencies": {
+    "vuepress": "^2.0.0-rc.0",
+    "vuepress-theme-hope": "2.0.0-rc.0"
+  }
+}
