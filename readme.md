@@ -21,10 +21,10 @@ Majora 是一套完整的代理 ip 建设集群方案，为代理 IP 池供应�
 
 ## 完整文档：
 
-[http://majora.iinti.cn/majora-doc/index.html](http://majora.iinti.cn/majora-doc/index.html)
+[majora3 doc](https://majora3.iinti.cn/majora-doc/)
 
 ### 联系方式
 
 商务：
 
-![商务](https://oss.iinti.cn/majora/dwc.jpeg)
+![商务](https://oss.iinti.cn/QCCode/dwc.jpeg)
