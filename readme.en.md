@@ -19,10 +19,10 @@ Majora is a complete proxy IP construction cluster solution for proxy IP pool su
 
 ## Complete documentation:
 
-[http://majora.iinti.cn/majora-doc/index.html](http://majora.iinti.cn/majora-doc/index.html)
+[http://majora3.iinti.cn/majora-doc/index.html](http://majora3.iinti.cn/majora-doc/index.html)
 
 ### Contact Information
 
 Business:
 
-![Business](https://oss.iinti.cn/majora/dwc.jpeg)
+![Business](https://oss.iinti.cn/QCCode/dwc.jpeg)
