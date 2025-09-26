@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const heroCardsClassNames = ['card primary-card', 'card secondary-card', 'card tertiary-card'];
 
@@ -24,10 +24,21 @@ type ConceptItem = {
   description: string;
 };
 
+const renderWithLineBreaks = (text: string): ReactNode => {
+  if (!text.includes('\n')) {
+    return text;
+  }
+
+  return text.split('\n').map((part, index) => (
+    <span key={`line-${index}`} className="line-break">
+      {part}
+    </span>
+  ));
+};
+
 const LandingPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const location = useLocation();
-  const basePath = i18n.language === 'en' ? '/en' : '/zh-CN';
 
   const cards = t('cards', { returnObjects: true }) as FeatureItem[];
   const features = t('features.items', { returnObjects: true }) as FeatureItem[];
@@ -54,8 +65,8 @@ const LandingPage = () => {
         <div className="container hero-content">
           <div className="hero-text">
             <p className="eyebrow">{t('hero.eyebrow')}</p>
-            <h1>{t('hero.title')}</h1>
-            <p className="lead">{t('hero.description')}</p>
+            <h1>{renderWithLineBreaks(t('hero.title'))}</h1>
+            <p className="lead">{renderWithLineBreaks(t('hero.description'))}</p>
             <div className="hero-actions">
               <a className="button primary" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
                 {t('hero.primaryCta')}
@@ -68,9 +79,22 @@ const LandingPage = () => {
               >
                 {t('hero.secondaryCta')}
               </a>
-              <Link className="button ghost small" to={`${basePath}/docs/introduction`}>
+              <a
+                className="button ghost small"
+                href="https://majora3.iinti.cn/majora-doc/00_intro/index.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {t('hero.introCta')}
-              </Link>
+              </a>
+              <a
+                className="button ghost small"
+                href="https://github.com/yint-tech/majora-open"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('hero.repoCta')}
+              </a>
             </div>
             <p className="note">
               {t('hero.note', {
@@ -87,47 +111,6 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="clients" className="section clients">
-        <div className="container">
-          <h2>{t('clients.title')}</h2>
-          <div className="client-grid">
-            {clients.map((client) => (
-              <article key={client.title} className="client-card">
-                <h3>{client.title}</h3>
-                <p>{client.description}</p>
-                {client.code ? (
-                  <pre>
-                    <code>{client.code}</code>
-                  </pre>
-                ) : null}
-                <div className="actions">
-                  {client.primaryAction && client.primaryLink ? (
-                    <a
-                      className="button primary"
-                      href={client.primaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.primaryAction}
-                    </a>
-                  ) : null}
-                  {client.secondaryAction && client.secondaryLink ? (
-                    <a
-                      className="button ghost"
-                      href={client.secondaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.secondaryAction}
-                    </a>
-                  ) : null}
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -181,6 +164,47 @@ const LandingPage = () => {
                 {stepLinkLabel}
               </a>
             ) : null}
+          </div>
+        </div>
+      </section>
+
+      <section id="clients" className="section clients">
+        <div className="container">
+          <h2>{t('clients.title')}</h2>
+          <div className="client-grid">
+            {clients.map((client) => (
+              <article key={client.title} className="client-card">
+                <h3>{client.title}</h3>
+                <p>{client.description}</p>
+                {client.code ? (
+                  <pre>
+                    <code>{client.code}</code>
+                  </pre>
+                ) : null}
+                <div className="actions">
+                  {client.primaryAction && client.primaryLink ? (
+                    <a
+                      className="button primary"
+                      href={client.primaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.primaryAction}
+                    </a>
+                  ) : null}
+                  {client.secondaryAction && client.secondaryLink ? (
+                    <a
+                      className="button ghost"
+                      href={client.secondaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.secondaryAction}
+                    </a>
+                  ) : null}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

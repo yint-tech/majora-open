@@ -4,7 +4,8 @@
     "steps": "安装步骤",
     "clients": "多端接入",
     "contact": "联系与合作",
-    "docs": "文档"
+    "docs": "文档",
+    "github": "GitHub"
   },
   "language": {
     "label": "语言",
@@ -13,12 +14,13 @@
   },
   "hero": {
     "eyebrow": "开始使用 · 高阶深入",
-    "title": "一键完成代理服务搭建，秒级接入全球网络设备",
-    "description": "Majora 是面向代理业务的一体化集群控制中心，轻松聚合分散的网络设备并形成可监管、可扩展的代理 IP 池。",
+    "title": "一键自建代理服务集群\n秒级接入自主网络设备",
+    "description": "聚合全球网络终端\n快速构建可监管、可扩展的代理 IP 池",
     "primaryCta": "立即体验测试账户",
     "secondaryCta": "浏览完整文档",
     "note": "测试账号：{{credentials}}",
-    "introCta": "阅读系统导言"
+    "introCta": "阅读系统导言",
+    "repoCta": "GitHub 仓库"
   },
   "cards": [
     {
