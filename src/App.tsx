@@ -28,7 +28,7 @@ const App = () => (
       <Route path="/:lang" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="docs" element={<DocsIndex />} />
-        <Route path="docs/:slug" element={<DocPage />} />
+        <Route path="docs/*" element={<DocPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="*" element={<Navigate to="/zh-CN" replace />} />

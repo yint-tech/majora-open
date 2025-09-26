@@ -204,7 +204,7 @@ ul {
 .card-stack {
   position: relative;
   display: grid;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 
 .card {
@@ -232,11 +232,11 @@ ul {
 }
 
 .secondary-card {
-  transform: translate(24px, -18px);
+  transform: translateX(32px);
 }
 
 .tertiary-card {
-  transform: translate(-16px, 12px);
+  transform: translateX(16px);
 }
 
 .section {

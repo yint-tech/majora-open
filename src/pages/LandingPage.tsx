@@ -60,14 +60,9 @@ const LandingPage = () => {
               <a className="button primary" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
                 {t('hero.primaryCta')}
               </a>
-              <a
-                className="button ghost"
-                href="https://majora3.iinti.cn/majora-doc/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="button ghost" to={`${basePath}/docs`}>
                 {t('hero.secondaryCta')}
-              </a>
+              </Link>
               <Link className="button ghost small" to={`${basePath}/docs/introduction`}>
                 {t('hero.introCta')}
               </Link>
