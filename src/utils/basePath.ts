@@ -8,11 +8,19 @@ const detectAppBasePath = (): string => {
   const segments = window.location.pathname.split('/').filter(Boolean);
   const localeIndex = segments.findIndex((segment) => SUPPORTED_LOCALES.has(segment));
 
-  if (localeIndex <= 0) {
+  if (localeIndex > 0) {
+    return `/${segments.slice(0, localeIndex).join('/')}`;
+  }
+
+  if (localeIndex === 0) {
     return '';
   }
 
-  return `/${segments.slice(0, localeIndex).join('/')}`;
+  if (window.location.hostname.endsWith('github.io') && segments.length > 0) {
+    return `/${segments[0]}`;
+  }
+
+  return '';
 };
 
 export const appBasePath = detectAppBasePath();
