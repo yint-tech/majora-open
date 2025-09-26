@@ -13,8 +13,8 @@
   },
   "hero": {
     "eyebrow": "Get Started · Advanced",
-    "title": "Launch your proxy service in one click and connect devices worldwide",
-    "description": "Majora centralises proxy infrastructure so you can federate diverse devices into a governed, scalable IP pool with ease.",
+    "title": "Launch proxy services in one click\nConnect devices worldwide",
+    "description": "Aggregate diverse endpoints into a governed, scalable proxy IP pool.",
     "primaryCta": "Try the demo account",
     "secondaryCta": "Browse full docs",
     "note": "Demo credentials: {{credentials}}",

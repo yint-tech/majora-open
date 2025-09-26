@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './styles/global.css';
 import './i18n/config';
+import { appBasePath } from './utils/basePath';
 
 const container = document.getElementById('root');
 
@@ -16,7 +17,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={appBasePath || undefined}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
