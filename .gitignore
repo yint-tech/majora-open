@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Builds and bundles
+dist/
+coverage/
+*.log
+
+# Editor directories
+.vscode/
+.idea/
+.DS_Store
+
+# Local environment files
+.env
+.env.*
+
+# npm cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

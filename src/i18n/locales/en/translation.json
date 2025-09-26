@@ -1,0 +1,146 @@
+{
+  "nav": {
+    "features": "Features",
+    "steps": "Setup",
+    "clients": "Clients",
+    "contact": "Contact",
+    "docs": "Docs"
+  },
+  "language": {
+    "label": "Language",
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "hero": {
+    "eyebrow": "Get Started · Advanced",
+    "title": "Launch your proxy service in one click and connect devices worldwide",
+    "description": "Majora centralises proxy infrastructure so you can federate diverse devices into a governed, scalable IP pool with ease.",
+    "primaryCta": "Try the demo account",
+    "secondaryCta": "Browse full docs",
+    "note": "Demo credentials: {{credentials}}",
+    "introCta": "Read the introduction"
+  },
+  "cards": [
+    {
+      "title": "Live Monitoring",
+      "description": "Unified control panel keeps device status and usage under watch."
+    },
+    {
+      "title": "High Performance",
+      "description": "Async NIO and memory reuse verified at 200 Mbps on a single host."
+    },
+    {
+      "title": "Multi-endpoint",
+      "description": "Windows / Linux / macOS / Android / routers all supported."
+    }
+  ],
+  "features": {
+    "title": "Why teams choose Majora",
+    "items": [
+      {
+        "title": "Simple operations",
+        "description": "Host-mode bootstrap registers nodes and tunnels automatically to minimize setup."
+      },
+      {
+        "title": "Flexible endpoints",
+        "description": "Supports PCs, servers, Android, routers, and API integration with existing systems."
+      },
+      {
+        "title": "Governance & control",
+        "description": "Role-based accounts, usage reports, device monitoring, replay control, and dual-side metering."
+      },
+      {
+        "title": "Resilient performance",
+        "description": "HTTP / HTTPS / SOCKS5 ready with millisecond failover and massive throughput."
+      }
+    ]
+  },
+  "steps": {
+    "title": "Deploy in one script",
+    "summary": [
+      "Prepare a Linux host with public network access and Docker installed.",
+      "Pull the majora3 all-in-one image from the official registry.",
+      "Run the stack in host mode with a persistent data volume.",
+      "Open the console: the first registered account becomes the admin user (demo credentials remain available)."
+    ],
+    "code": "yum install -y docker\ndocker pull registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\ndocker run -d --network host \\\n  -v ~/majora3-mysql-data:/var/lib/mysql \\\n  --name majora3 \\\n  registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\necho \"Browse http://127.0.0.1:6879 and login with majora/majora\"\necho \"The first registered account becomes the admin user\"",
+    "linkLabel": "Open the console"
+  },
+  "clients": {
+    "title": "Client access in minutes",
+    "items": [
+      {
+        "title": "VPS nodes",
+        "description": "Linux binaries cover dedicated servers and cloud hosts with batch-friendly operations.",
+        "primaryAction": "Setup guide",
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
+      },
+      {
+        "title": "Router terminals",
+        "description": "OpenWrt and other routers integrate quickly to onboard residential or office broadband.",
+        "primaryAction": "Request solution",
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/"
+      },
+      {
+        "title": "Android 4G devices",
+        "description": "Hardened Android app turns phones and SBCs into stable 4G proxy exports.",
+        "primaryAction": "Download APK",
+        "primaryLink": "https://oss.iinti.cn/majora3/Majora3.apk",
+        "secondaryAction": "Install guide",
+        "secondaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Build your enterprise proxy network",
+    "description": "Deliver secure and stable connectivity backed by Majora's reliability and scalability.",
+    "action": "Open console"
+  },
+  "footer": {
+    "products": "IINTI Portfolio | Majora · Sekiro · Malenia",
+    "business": "Business",
+    "businessDescription": "Scan the QR code or add WeChat {{wechat}} to join the community.",
+    "docs": "Docs & Support",
+    "officialDoc": "Docs portal",
+    "deployOverview": "Deployment overview",
+    "contactEmail": "Email",
+    "copyright": "© 2022-present IINTI"
+  },
+  "docsPage": {
+    "title": "Documentation",
+    "intro": "Markdown files are converted into pages automatically with language-aware routing.",
+    "updated": "Latest updates",
+    "empty": "No documents are available for this language yet.",
+    "fallbackNote": "Showing a different language because this translation is not ready.",
+    "read": "Read",
+    "back": "Back to docs",
+    "notFound": "Document not found."
+  },
+  "notFound": {
+    "title": "Not found",
+    "description": "Sorry, the page you are seeking does not exist.",
+    "back": "Return home"
+  },
+  "concepts": {
+    "title": "Key Pillars at a Glance",
+    "intro": "Understand Majora3 across five pillars to deploy and scale a controllable proxy network.",
+    "items": [
+      {
+        "title": "Pool strategies",
+        "description": "Random, Static, Consistent and City pools balance stability, geo affinity and dynamic routing."
+      },
+      {
+        "title": "Endpoints",
+        "description": "Onboard Linux, Windows, macOS, routers and Android with built-in NAT traversal for any device."
+      },
+      {
+        "title": "Rebinding",
+        "description": "Refresh egress IPs via redial or flight mode; rebind plans control scope, cadence and audit results."
+      },
+      {
+        "title": "Security & performance",
+        "description": "Dual-account governance, ACL enforcement and event-driven architecture with full-funnel telemetry at 200 Mbps."
+      }
+    ]
+  }
+}
