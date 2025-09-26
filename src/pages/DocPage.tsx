@@ -6,7 +6,10 @@ import { marked } from 'marked';
 import { getDoc, getFallbackDoc, type DocRecord } from '../content/docs';
 
 const DocPage = () => {
-  const { lang, slug } = useParams<{ lang?: string; slug?: string }>();
+  const params = useParams<{ lang?: string; '*': string }>();
+  const { lang } = params;
+  const slugParam = params['*'];
+  const slug = slugParam ? slugParam.replace(/\/+$/, '') : undefined;
   const { t } = useTranslation();
 
   const locale: DocRecord['locale'] = lang === 'en' ? 'en' : 'zh-CN';

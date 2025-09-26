@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -22,6 +22,21 @@ type ClientItem = {
 type ConceptItem = {
   title: string;
   description: string;
+};
+
+const renderWithLineBreaks = (text: string): ReactNode => {
+  if (!text.includes('\n')) {
+    return text;
+  }
+
+  const parts = text.split('\n');
+
+  return parts.map((part, index) => (
+    <span key={`line-${index}`}>
+      {part}
+      {index < parts.length - 1 ? <br /> : null}
+    </span>
+  ));
 };
 
 const LandingPage = () => {
@@ -54,20 +69,15 @@ const LandingPage = () => {
         <div className="container hero-content">
           <div className="hero-text">
             <p className="eyebrow">{t('hero.eyebrow')}</p>
-            <h1>{t('hero.title')}</h1>
-            <p className="lead">{t('hero.description')}</p>
+            <h1>{renderWithLineBreaks(t('hero.title'))}</h1>
+            <p className="lead">{renderWithLineBreaks(t('hero.description'))}</p>
             <div className="hero-actions">
               <a className="button primary" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
                 {t('hero.primaryCta')}
               </a>
-              <a
-                className="button ghost"
-                href="https://majora3.iinti.cn/majora-doc/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link className="button ghost" to={`${basePath}/docs`}>
                 {t('hero.secondaryCta')}
-              </a>
+              </Link>
               <Link className="button ghost small" to={`${basePath}/docs/introduction`}>
                 {t('hero.introCta')}
               </Link>
@@ -87,47 +97,6 @@ const LandingPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="clients" className="section clients">
-        <div className="container">
-          <h2>{t('clients.title')}</h2>
-          <div className="client-grid">
-            {clients.map((client) => (
-              <article key={client.title} className="client-card">
-                <h3>{client.title}</h3>
-                <p>{client.description}</p>
-                {client.code ? (
-                  <pre>
-                    <code>{client.code}</code>
-                  </pre>
-                ) : null}
-                <div className="actions">
-                  {client.primaryAction && client.primaryLink ? (
-                    <a
-                      className="button primary"
-                      href={client.primaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.primaryAction}
-                    </a>
-                  ) : null}
-                  {client.secondaryAction && client.secondaryLink ? (
-                    <a
-                      className="button ghost"
-                      href={client.secondaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.secondaryAction}
-                    </a>
-                  ) : null}
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -181,6 +150,47 @@ const LandingPage = () => {
                 {stepLinkLabel}
               </a>
             ) : null}
+          </div>
+        </div>
+      </section>
+
+      <section id="clients" className="section clients">
+        <div className="container">
+          <h2>{t('clients.title')}</h2>
+          <div className="client-grid">
+            {clients.map((client) => (
+              <article key={client.title} className="client-card">
+                <h3>{client.title}</h3>
+                <p>{client.description}</p>
+                {client.code ? (
+                  <pre>
+                    <code>{client.code}</code>
+                  </pre>
+                ) : null}
+                <div className="actions">
+                  {client.primaryAction && client.primaryLink ? (
+                    <a
+                      className="button primary"
+                      href={client.primaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.primaryAction}
+                    </a>
+                  ) : null}
+                  {client.secondaryAction && client.secondaryLink ? (
+                    <a
+                      className="button ghost"
+                      href={client.secondaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.secondaryAction}
+                    </a>
+                  ) : null}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
