@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const heroCardsClassNames = ['card primary-card', 'card secondary-card', 'card tertiary-card'];
 
@@ -36,9 +36,13 @@ const renderWithLineBreaks = (text: string): ReactNode => {
   ));
 };
 
+const isExternalLink = (url: string): boolean => /^https?:\/\//.test(url);
+
 const LandingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
+  const currentLocale = i18n.language === 'en' ? 'en' : 'zh-CN';
+  const basePath = `/${currentLocale}`;
 
   const cards = t('cards', { returnObjects: true }) as FeatureItem[];
   const features = t('features.items', { returnObjects: true }) as FeatureItem[];
@@ -68,25 +72,15 @@ const LandingPage = () => {
             <h1>{renderWithLineBreaks(t('hero.title'))}</h1>
             <p className="lead">{renderWithLineBreaks(t('hero.description'))}</p>
             <div className="hero-actions">
-              <a className="button primary" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
+              <Link className="button primary" to={`${basePath}/docs/quick-start`}>
                 {t('hero.primaryCta')}
-              </a>
-              <a
-                className="button ghost"
-                href="https://majora3.iinti.cn/majora-doc/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </Link>
+              <Link className="button ghost" to={`${basePath}/docs`}>
                 {t('hero.secondaryCta')}
-              </a>
-              <a
-                className="button ghost small"
-                href="https://majora3.iinti.cn/majora-doc/00_intro/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              </Link>
+              <Link className="button ghost small" to={`${basePath}/docs/introduction`}>
                 {t('hero.introCta')}
-              </a>
+              </Link>
               <a
                 className="button ghost small"
                 href="https://github.com/yint-tech/majora-open"
@@ -160,9 +154,9 @@ const LandingPage = () => {
               <code>{stepCode}</code>
             </pre>
             {stepLinkLabel ? (
-              <a className="button ghost" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
+              <Link className="button ghost" to={`${basePath}/docs/quick-start`}>
                 {stepLinkLabel}
-              </a>
+              </Link>
             ) : null}
           </div>
         </div>
@@ -183,24 +177,36 @@ const LandingPage = () => {
                 ) : null}
                 <div className="actions">
                   {client.primaryAction && client.primaryLink ? (
-                    <a
-                      className="button primary"
-                      href={client.primaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.primaryAction}
-                    </a>
+                    isExternalLink(client.primaryLink) ? (
+                      <a
+                        className="button primary"
+                        href={client.primaryLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {client.primaryAction}
+                      </a>
+                    ) : (
+                      <Link className="button primary" to={`${basePath}${client.primaryLink}`}>
+                        {client.primaryAction}
+                      </Link>
+                    )
                   ) : null}
                   {client.secondaryAction && client.secondaryLink ? (
-                    <a
-                      className="button ghost"
-                      href={client.secondaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.secondaryAction}
-                    </a>
+                    isExternalLink(client.secondaryLink) ? (
+                      <a
+                        className="button ghost"
+                        href={client.secondaryLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {client.secondaryAction}
+                      </a>
+                    ) : (
+                      <Link className="button ghost" to={`${basePath}${client.secondaryLink}`}>
+                        {client.secondaryAction}
+                      </Link>
+                    )
                   ) : null}
                 </div>
               </article>
@@ -216,7 +222,12 @@ const LandingPage = () => {
               <h2 id="cta-title">{t('cta.title')}</h2>
               <p>{t('cta.description')}</p>
             </div>
-            <a className="button primary" href="http://majora3.iinti.cn/" target="_blank" rel="noopener noreferrer">
+            <a
+              className="button primary"
+              href="https://github.com/yint-tech/majora-open"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t('cta.action')}
             </a>
           </div>

@@ -13,6 +13,13 @@ if (!container) {
   throw new Error('Root container missing');
 }
 
+const savedRedirect = sessionStorage.getItem('spa-redirect');
+if (savedRedirect) {
+  const normalized = savedRedirect.startsWith('/') ? savedRedirect : `/${savedRedirect}`;
+  window.history.replaceState(null, document.title, normalized || '/');
+  sessionStorage.removeItem('spa-redirect');
+}
+
 const root = createRoot(container);
 
 root.render(

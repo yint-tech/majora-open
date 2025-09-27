@@ -60,6 +60,9 @@ const Header = () => {
           <a href={toAbsoluteUrl(`${basePath}#contact`)} onClick={handleScroll('contact')}>
             {t('nav.contact')}
           </a>
+          <a href="https://github.com/yint-tech/majora-open" target="_blank" rel="noopener noreferrer">
+            {t('nav.github')}
+          </a>
         </nav>
         <LanguageSwitcher />
       </div>

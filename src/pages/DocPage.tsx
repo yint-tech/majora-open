@@ -8,18 +8,19 @@ import { getDoc, getFallbackDoc, type DocRecord } from '../content/docs';
 const DocPage = () => {
   const params = useParams<{ lang?: string; '*': string }>();
   const { lang } = params;
-  const slugParam = params['*'];
-  const slug = slugParam ? slugParam.replace(/\/+$/, '') : undefined;
   const { t } = useTranslation();
 
   const locale: DocRecord['locale'] = lang === 'en' ? 'en' : 'zh-CN';
   const basePath = `/${locale}`;
 
+  const slug = params['*'];
+
   const doc = useMemo(() => {
     if (!slug) {
       return undefined;
     }
-    return getDoc(slug, locale) ?? getFallbackDoc(slug);
+    const normalizedSlug = slug.replace(/\/+$/, '');
+    return getDoc(normalizedSlug, locale) ?? getFallbackDoc(normalizedSlug);
   }, [slug, locale]);
 
   const isFallback = doc ? doc.locale !== locale : false;

@@ -163,22 +163,17 @@ ul {
   margin-bottom: 1.3rem;
 }
 
-.line-break {
-  display: block;
-}
-
-.hero-text h1 .line-break:not(:last-child) {
-  margin-bottom: 0.3rem;
-}
-
-.hero-text .lead .line-break:not(:last-child) {
-  margin-bottom: 0.2rem;
-}
-
 .hero-text .lead {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 32rem;
+}
+.hero-text .line-break {
+  display: block;
+}
+
+.hero-text .line-break + .line-break {
+  margin-top: 0.4rem;
 }
 
 .hero-text .eyebrow {
@@ -216,7 +211,7 @@ ul {
 .card-stack {
   position: relative;
   display: grid;
-  gap: 1.6rem;
+  gap: 1.2rem;
 }
 
 .card {
@@ -244,11 +239,11 @@ ul {
 }
 
 .secondary-card {
-  transform: translateX(32px);
+  transform: translate(32px, -12px);
 }
 
 .tertiary-card {
-  transform: translateX(16px);
+  transform: translate(-20px, 20px);
 }
 
 .section {
