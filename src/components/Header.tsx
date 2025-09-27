@@ -1,36 +1,14 @@
-import { MouseEvent } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from './LanguageSwitcher';
-import { toAbsoluteUrl } from '../utils/basePath';
 
 const Header = () => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const navigate = useNavigate();
   const { lang } = useParams<{ lang?: string }>();
 
   const currentLang = lang === 'en' ? 'en' : 'zh-CN';
   const basePath = `/${currentLang}`;
-
-  const handleScroll = (targetId: string) => (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-
-    const scrollToElement = () => {
-      const element = document.getElementById(targetId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    };
-
-    if (location.pathname !== basePath) {
-      navigate(basePath, { state: { scrollTo: targetId } });
-      return;
-    }
-
-    scrollToElement();
-  };
 
   return (
     <header className="site-header">
@@ -42,15 +20,7 @@ const Header = () => {
           <span className="tagline">IP Proxy Platform</span>
         </div>
         <nav className="navigation" aria-label="Primary">
-          <a href={toAbsoluteUrl(`${basePath}#features`)} onClick={handleScroll('features')}>
-            {t('nav.features')}
-          </a>
-          <a href={toAbsoluteUrl(`${basePath}#steps`)} onClick={handleScroll('steps')}>
-            {t('nav.steps')}
-          </a>
-          <a href={toAbsoluteUrl(`${basePath}#clients`)} onClick={handleScroll('clients')}>
-            {t('nav.clients')}
-          </a>
+          <Link to={`${basePath}/pricing`}>{t('nav.pricing')}</Link>
           <a href="https://majora3.iinti.cn/majora-doc/" target="_blank" rel="noopener noreferrer">
             {t('nav.docs')}
           </a>

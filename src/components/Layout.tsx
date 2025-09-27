@@ -22,7 +22,7 @@ const Layout = () => {
       void i18n.changeLanguage(normalized);
     }
 
-    document.title = normalized === 'en' ? 'Majora3 Proxy Cluster' : 'majora3 代理集群';
+    document.title = normalized === 'en' ? 'Majora3-IP Proxy Cluster' : 'Majora3-代理IP池集群';
   }, [lang, i18n, navigate]);
 
   return (

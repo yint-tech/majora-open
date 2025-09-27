@@ -1,9 +1,10 @@
 {
   "nav": {
-    "features": "Features",
-    "steps": "Setup",
-    "clients": "Clients",
-    "contact": "Contact",
+    "features": "Highlights",
+    "steps": "Deploy",
+    "clients": "Endpoints",
+    "pricing": "Pricing",
+    "contact": "Contact & partnerships",
     "docs": "Docs",
     "github": "GitHub"
   },
@@ -14,88 +15,140 @@
   },
   "hero": {
     "eyebrow": "",
-    "title": "Self-host a proxy cluster in one click, connect private network devices in seconds",
-    "description": "Aggregate global endpoints\nBuild a governed and scalable proxy IP pool",
-    "primaryCta": "Get started",
+    "title": "Spin up a proxy cluster in one click,\nconnect your own devices within seconds.",
+    "description": "Aggregate global endpoints to build a governed, scalable proxy IP pool.",
+    "primaryCta": "Quick start",
     "secondaryCta": "Browse docs",
-    "note": "Demo credentials: {{credentials}}",
+    "note": "Demo account: {{credentials}}",
     "tags": [
-      { "id": "features", "label": "Product advantages" },
       { "id": "concepts", "label": "Core capabilities" },
-      { "id": "steps", "label": "Installation" },
-      { "id": "clients", "label": "Clients" }
-    ],
+      { "id": "steps", "label": "Deploy" },
+      { "id": "clients", "label": "Endpoints" }
+  ],
     "introCta": "Read the introduction",
-    "repoCta": "View on GitHub"
+    "repoCta": "GitHub repository"
   },
   "cards": [
     {
-      "title": "Live Monitoring",
-      "description": "Unified control panel keeps device status and usage under watch."
+      "title": "Real-time monitoring",
+      "description": "Unified control center surfaces device status and usage instantly."
     },
     {
-      "title": "High Performance",
-      "description": "Async NIO and memory reuse verified at 200 Mbps on a single host."
+      "title": "High performance",
+      "description": "Async NIO and memory reuse sustain 200 Mbps per host in validation."
     },
     {
-      "title": "Multi-endpoint",
-      "description": "Windows / Linux / macOS / Android / routers all supported."
+      "title": "Multi-endpoint coverage",
+      "description": "Windows, Linux, macOS, Android, and router environments are supported out of the box."
     }
   ],
   "features": {
-    "title": "Why teams choose Majora",
+    "title": "Why choose Majora",
     "items": [
       {
         "title": "Simple operations",
-        "description": "Host-mode bootstrap registers nodes and tunnels automatically to minimize setup."
+        "description": "Host mode boots the service, auto-registers nodes, and opens tunnels to minimize deployment friction."
       },
       {
-        "title": "Flexible endpoints",
-        "description": "Supports PCs, servers, Android, routers, and API integration with existing systems."
+        "title": "Rich endpoint options",
+        "description": "Support for PCs, servers, Android, routers, plus APIs for integrating into business systems."
       },
       {
-        "title": "Governance & control",
-        "description": "Role-based accounts, usage reports, device monitoring, replay control, and dual-side metering."
+        "title": "Management & control",
+        "description": "Multi-tenant accounts, reports, device monitoring, remote replay and control, with metering across supply and consumption."
       },
       {
-        "title": "Resilient performance",
-        "description": "HTTP / HTTPS / SOCKS5 ready with millisecond failover and massive throughput."
+        "title": "Reliability & performance",
+        "description": "Compatible with HTTP / HTTPS / SOCKS5, delivers millisecond failover, and scales proxy traffic with high throughput."
       }
     ]
   },
   "steps": {
-    "title": "Deploy in one script",
+    "title": "Deploy in one command",
     "summary": [
       "Prepare a Linux host with public network access and Docker installed.",
       "Pull the majora3 all-in-one image from the official registry.",
-      "Run the stack in host mode with a persistent data volume.",
-      "Open the console: the first registered account becomes the admin user (demo credentials remain available)."
+      "Run in host mode and mount a persistent data directory.",
+      "Sign in to the console: the first registered user becomes the admin account, demo credentials remain available."
     ],
-    "code": "yum install -y docker\ndocker pull registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\ndocker run -d --network host \\\n  -v ~/majora3-mysql-data:/var/lib/mysql \\\n  --name majora3 \\\n  registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\necho \"Browse http://127.0.0.1:6879 and login with majora/majora\"\necho \"The first registered account becomes the admin user\"",
+    "code": "yum install -y docker\ndocker pull registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\ndocker run -d --network host \\\n  -v ~/majora3-mysql-data:/var/lib/mysql \\\n  --name majora3 \\\n  registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\necho \"Open http://127.0.0.1:6879 and login with majora/majora\"\necho \"The first registered user becomes the admin account\"",
     "linkLabel": "View setup guide"
   },
   "clients": {
-    "title": "Client access in minutes",
+    "title": "Connect endpoints in minutes",
     "items": [
       {
         "title": "VPS nodes",
-        "description": "Linux binaries cover dedicated servers and cloud hosts with batch-friendly operations.",
-        "primaryAction": "Setup guide",
+        "description": "One-command Linux client covers servers and cloud hosts, supporting batch deployment and scripted operations.",
+        "primaryAction": "Deployment guide",
         "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "Router terminals",
-        "description": "OpenWrt and other routers integrate quickly to onboard residential or office broadband.",
-        "primaryAction": "Integration overview",
+        "description": "OpenWrt and other routers join quickly, bringing home or office broadband into the proxy pool.",
+        "primaryAction": "Integration guide",
         "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "Android 4G devices",
-        "description": "Hardened Android app turns phones and SBCs into stable 4G proxy exports.",
+        "description": "Android client runs reliably on phones or SBCs to expose stable 4G proxy traffic.",
         "primaryAction": "Usage guide",
         "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
       }
     ]
+  },
+  "pricing": {
+    "title": "Commercial licensing pricing",
+    "intro": "Licensing is counted per server IP. Each server costs RMB 1,000 per month (quarterly billing or longer). Free updates and upgrade support are included during the licensing period.",
+    "table": {
+      "headers": [
+        "Plan / Term",
+        "Price (RMB)",
+        "Runtime limit",
+        "Deployment assistance",
+        "IP changes",
+        "1-on-1 technical support"
+      ],
+      "rows": [
+        {
+          "term": "Quarterly",
+          "price": "3000",
+          "limit": "1 server",
+          "deploy": "First setup",
+          "ip": "3 times",
+          "support": "2 sessions"
+        },
+        {
+          "term": "Semiannual",
+          "price": "6000",
+          "limit": "1 server",
+          "deploy": "Up to 3",
+          "ip": "6 times",
+          "support": "4 sessions"
+        },
+        {
+          "term": "Annual",
+          "price": "10000",
+          "limit": "1 server",
+          "deploy": "Up to 6",
+          "ip": "Unlimited",
+          "support": "6 sessions"
+        },
+        {
+          "term": "Source code",
+          "price": "Contact sales",
+          "limit": "Unlimited",
+          "deploy": "Unlimited",
+          "ip": "Unlimited",
+          "support": "Unlimited"
+        }
+      ]
+    },
+    "note": "Need source code licensing or custom services? Contact our sales team for a tailored quotation.",
+    "contact": {
+      "label": "Talk to sales",
+      "wechat": "WeChat: iinti_cn"
+    }
   },
   "otherProducts": {
     "title": "More from IINTI",
@@ -103,7 +156,7 @@
     "items": [
       {
         "title": "Malenia Proxy IP Gateway",
-        "description": "Documentation for the Malenia proxy IP gateway platform.",
+        "description": "Official documentation for the Malenia proxy IP gateway platform.",
         "link": "https://malenia.iinti.cn/malenia-doc/",
         "label": "Open docs"
       },
@@ -114,8 +167,8 @@
         "label": "Open docs"
       },
       {
-        "title": "IINTI Official Site",
-        "description": "Open-source co-creation to win together. Professional data-mining software provider.",
+        "title": "IINTI official site",
+        "description": "Open collaboration for shared success. Professional data-mining software provider.",
         "link": "https://iinti.cn/",
         "label": "Visit site"
       }
@@ -123,53 +176,53 @@
   },
   "cta": {
     "title": "",
-    "description": "Deliver secure and stable connectivity backed by Majora's reliability and scalability.",
+    "description": "Launch a proxy IP service with Majora's reliability and scalability to deliver secure, stable connectivity.",
     "action": "View GitHub project"
   },
   "footer": {
-    "products": "Powered by iinti Technology",
-    "business": "Business",
-    "businessDescription": "add WeChat {{wechat}} to join the community.",
-    "docs": "Docs & Support",
-    "officialDoc": "Docs hub",
+    "products": "Powered by IINTI Technology",
+    "business": "Business cooperation",
+    "businessDescription": "Add WeChat {{wechat}} to join the community.",
+    "docs": "Docs & support",
+    "officialDoc": "Documentation hub",
     "deployOverview": "Quick start",
-    "contactEmail": "Email",
+    "contactEmail": "Contact email",
     "copyright": "© 2022-present IINTI"
   },
   "docsPage": {
     "title": "Documentation",
-    "intro": "Markdown files are converted into pages automatically with language-aware routing.",
+    "intro": "Markdown files are rendered into pages automatically with language-aware routing.",
     "updated": "Latest updates",
     "empty": "No documents are available for this language yet.",
-    "fallbackNote": "Showing a different language because this translation is not ready.",
+    "fallbackNote": "This translation is not ready yet; showing another language instead.",
     "read": "Read",
     "back": "Back to docs",
     "notFound": "Document not found."
   },
   "notFound": {
-    "title": "Not found",
-    "description": "Sorry, the page you are seeking does not exist.",
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
     "back": "Return home"
   },
   "concepts": {
-    "title": "Key Pillars at a Glance",
-    "intro": "Understand Majora3 across four pillars to deploy and scale a controllable proxy network.",
+    "title": "Core capabilities overview",
+    "intro": "Understand how Majora3 helps you build a controlled, scalable proxy IP pool across four pillars.",
     "items": [
       {
-        "title": "Pool strategies",
-        "description": "Random, Static, Consistent and City pools balance stability, geo affinity and dynamic routing."
+        "title": "IP pool models",
+        "description": "Random, Static, Consistent, and City strategies balance stability, location coverage, and dynamic routing."
       },
       {
-        "title": "Endpoints",
-        "description": "Onboard Linux, Windows, macOS, routers and Android with built-in NAT traversal for any device."
+        "title": "Endpoint onboarding",
+        "description": "Unified governance for Linux, Windows, macOS, routers, and Android with built-in NAT traversal."
       },
       {
-        "title": "Rebinding",
-        "description": "Refresh egress IPs via redial or flight mode; rebind plans control scope, cadence and audit results."
+        "title": "Rebinding mechanism",
+        "description": "Refresh egress IPs through redial or flight-mode actions, with fine-grained control over scope and cadence."
       },
       {
         "title": "Security & performance",
-        "description": "Dual-account governance, ACL enforcement and event-driven architecture with full-funnel telemetry at 200 Mbps."
+        "description": "Dual-account governance, ACL auditing, event-driven architecture, and full-stack monitoring for stable 200 Mbps forwarding."
       }
     ]
   }

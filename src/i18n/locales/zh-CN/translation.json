@@ -3,6 +3,7 @@
     "features": "优势",
     "steps": "安装步骤",
     "clients": "多端接入",
+    "pricing": "价格",
     "contact": "联系与合作",
     "docs": "文档",
     "github": "GitHub"
@@ -20,7 +21,6 @@
     "secondaryCta": "浏览文档",
     "note": "测试账号：{{credentials}}",
     "tags": [
-      { "id": "features", "label": "产品优势" },
       { "id": "concepts", "label": "核心能力" },
       { "id": "steps", "label": "安装部署" },
       { "id": "clients", "label": "多端接入" }
@@ -96,6 +96,59 @@
         "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
       }
     ]
+  },
+  "pricing": {
+    "title": "商业授权价格",
+    "intro": "按服务器 IP 授权，单台服务器 1000 元 / 月（季付起）。授权期内免费更新，版本升级提供免费技术支持。",
+    "table": {
+      "headers": [
+        "类别 / 时长",
+        "价格（RMB）",
+        "运行限制",
+        "部署支持",
+        "变更 IP",
+        "一对一技术支持"
+      ],
+      "rows": [
+        {
+          "term": "季付",
+          "price": "3000",
+          "limit": "1 台",
+          "deploy": "首次",
+          "ip": "3 次",
+          "support": "2 次"
+        },
+        {
+          "term": "半年付",
+          "price": "6000",
+          "limit": "1 台",
+          "deploy": "3 次",
+          "ip": "6 次",
+          "support": "4 次"
+        },
+        {
+          "term": "年付",
+          "price": "10000",
+          "limit": "1 台",
+          "deploy": "6 次",
+          "ip": "无限制",
+          "support": "6 次"
+        },
+        {
+          "term": "源码",
+          "price": "咨询商务",
+          "limit": "无限制",
+          "deploy": "无限制",
+          "ip": "无限制",
+          "support": "无限制"
+        }
+      ]
+    },
+    "note": "如需源码授权或定制化服务，请联系商务获取专属报价。",
+    "contact": {
+      "label": "联系商务",
+      "wechat": "微信：iinti_cn"
+    }
   },
   "otherProducts": {
     "title": "更多产品",

@@ -1,6 +1,10 @@
-import { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
+
+const LANG_OPTIONS = [
+  { value: 'zh-CN' as const, labelKey: 'language.zh' },
+  { value: 'en' as const, labelKey: 'language.en' },
+];
 
 const LanguageSwitcher = () => {
   const { i18n, t } = useTranslation();
@@ -8,10 +12,9 @@ const LanguageSwitcher = () => {
   const navigate = useNavigate();
   const { lang } = useParams<{ lang?: string }>();
 
-  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const nextLang = event.target.value as 'zh-CN' | 'en';
-    const currentLang = lang === 'en' ? 'en' : 'zh-CN';
+  const currentLang = lang === 'en' ? 'en' : 'zh-CN';
 
+  const handleSwitch = (nextLang: 'zh-CN' | 'en') => {
     if (nextLang === currentLang) {
       return;
     }
@@ -25,13 +28,20 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <label className="language-switcher">
-      <span>{t('language.label')}:</span>
-      <select value={i18n.language} onChange={handleChange}>
-        <option value="zh-CN">{t('language.zh')}</option>
-        <option value="en">{t('language.en')}</option>
-      </select>
-    </label>
+    <div className="language-switcher" role="tablist" aria-label={t('language.label')}>
+      {LANG_OPTIONS.map(({ value, labelKey }) => (
+        <button
+          key={value}
+          type="button"
+          role="tab"
+          aria-selected={currentLang === value}
+          className={`language-tab${currentLang === value ? ' is-active' : ''}`}
+          onClick={() => handleSwitch(value)}
+        >
+          {t(labelKey)}
+        </button>
+      ))}
+    </div>
   );
 };
 

@@ -3,10 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Majora3 Proxy Cluster</title>
+    <title>Majora3 IP Proxy Cluster</title>
   </head>
   <body>
     <div id="root"></div>
-    <script src="./bundle.js"></script>
+    <script>
+      (function () {
+        var SUPPORTED_LOCALES = { 'zh-CN': true, en: true };
+        var segments = window.location.pathname.split('/').filter(Boolean);
+        var localeIndex = segments.findIndex(function (segment) {
+          return Boolean(SUPPORTED_LOCALES[segment]);
+        });
+
+        var basePath = '';
+
+        if (localeIndex > 0) {
+          basePath = '/' + segments.slice(0, localeIndex).join('/');
+        } else if (localeIndex === 0) {
+          basePath = '';
+        } else if (window.location.hostname.endsWith('github.io') && segments.length > 0) {
+          basePath = '/' + segments[0];
+        } else if (segments.length > 0) {
+          var last = segments[segments.length - 1] || '';
+          var cleanSegments = last.indexOf('.') !== -1 ? segments.slice(0, -1) : segments;
+          if (cleanSegments.length > 0) {
+            basePath = '/' + cleanSegments.join('/');
+          }
+        }
+
+        window.__APP_BASE_PATH__ = basePath;
+
+        var script = document.createElement('script');
+        script.src = (basePath + '/bundle.js').replace(/\/+/g, '/');
+        document.body.appendChild(script);
+      })();
+    </script>
   </body>
 </html>

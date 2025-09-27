@@ -132,18 +132,33 @@ ul {
 .language-switcher {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.language-switcher select {
+  gap: 0.2rem;
   background: rgba(15, 23, 42, 0.5);
-  color: var(--text);
   border: 1px solid rgba(148, 163, 184, 0.3);
   border-radius: 999px;
-  padding: 0.35rem 1rem;
-  font-family: inherit;
+  padding: 0.2rem;
+}
+
+.language-tab {
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.language-tab:hover,
+.language-tab:focus-visible {
+  color: var(--text);
+  outline: none;
+}
+
+.language-tab.is-active {
+  background: rgba(76, 110, 245, 0.3);
+  color: var(--text);
 }
 
 .hero {
@@ -181,6 +196,84 @@ ul {
   border-color: var(--accent);
   color: var(--text);
   outline: none;
+}
+
+.pricing-page {
+  padding: 4rem 0 6rem;
+  color: var(--text);
+}
+
+.pricing-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3rem;
+}
+
+.pricing-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.pricing-hero p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.pricing-table-wrapper {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  overflow-x: auto;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.pricing-table th {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.pricing-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table td {
+  font-size: 1rem;
+}
+
+.pricing-note {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: var(--muted);
+  display: grid;
+  gap: 0.8rem;
+}
+
+.pricing-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  color: var(--text);
 }
 
 @media (max-width: 900px) {

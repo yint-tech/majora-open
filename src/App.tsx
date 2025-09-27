@@ -6,6 +6,7 @@ import DocPage from './pages/DocPage';
 import DocsIndex from './pages/DocsIndex';
 import LandingPage from './pages/LandingPage';
 import NotFound from './pages/NotFound';
+import PricingPage from './pages/PricingPage';
 
 const ScrollRestoration = () => {
   const { pathname } = useLocation();
@@ -29,6 +30,7 @@ const App = () => (
         <Route index element={<LandingPage />} />
         <Route path="docs" element={<DocsIndex />} />
         <Route path="docs/*" element={<DocPage />} />
+        <Route path="pricing" element={<PricingPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="*" element={<Navigate to="/zh-CN" replace />} />
