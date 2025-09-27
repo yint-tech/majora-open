@@ -98,55 +98,53 @@
     ]
   },
   "pricing": {
-    "title": "Commercial licensing pricing",
-    "intro": "Licensing is counted per server IP. Each server costs RMB 1,000 per month (quarterly billing or longer). Free updates and upgrade support are included during the licensing period.",
-    "table": {
-      "headers": [
-        "Plan / Term",
-        "Price (RMB)",
-        "Runtime limit",
-        "Deployment assistance",
-        "IP changes",
-        "1-on-1 technical support"
-      ],
-      "rows": [
-        {
-          "term": "Quarterly",
-          "price": "3000",
-          "limit": "1 server",
-          "deploy": "First setup",
-          "ip": "3 times",
-          "support": "2 sessions"
-        },
-        {
-          "term": "Semiannual",
-          "price": "6000",
-          "limit": "1 server",
-          "deploy": "Up to 3",
-          "ip": "6 times",
-          "support": "4 sessions"
-        },
-        {
-          "term": "Annual",
-          "price": "10000",
-          "limit": "1 server",
-          "deploy": "Up to 6",
-          "ip": "Unlimited",
-          "support": "6 sessions"
-        },
-        {
-          "term": "Source code",
-          "price": "Contact sales",
-          "limit": "Unlimited",
-          "deploy": "Unlimited",
-          "ip": "Unlimited",
-          "support": "Unlimited"
-        }
-      ]
-    },
-    "note": "Need source code licensing or custom services? Contact our sales team for a tailored quotation.",
+    "title": "Commercial licensing plans",
+    "intro": "Licensing is issued per server IP, with free updates and upgrade support for the entire term.",
+    "plans": [
+      {
+        "name": "Trial plan",
+        "tagline": "Short-term testing / urgent delivery",
+        "price": "RMB 0 / month",
+        "billing": "Expires after one month and shuts down automatically.",
+        "features": [
+          "License for 1 server",
+          "No technical support included"
+        ],
+        "cta": "Start trial",
+        "link": "https://majora3.iinti.cn/majora-doc/01_deploy/01_server.html"
+      },
+      {
+        "name": "Annual / quarterly plan",
+        "tagline": "Best fit for long-running operations",
+        "price": "Annual: RMB 10,000",
+        "billing": "Quarterly: RMB 3,000 | Semiannual: RMB 6,000",
+        "features": [
+          "License for 1 server",
+          "Quarterly: first deployment support | first technical session",
+          "Semiannual: 2 IP change requests | 2 technical support sessions",
+          "Annual: unlimited IP changes | 3 technical support sessions"
+        ],
+        "cta": "Request detailed quote",
+        "link": "https://majora3.iinti.cn/majora-doc"
+      },
+      {
+        "name": "Source code license",
+        "tagline": "For deep customization",
+        "price": "Consult sales",
+        "billing": "Source delivery with unrestricted licensing",
+        "features": [
+          "Unlimited server deployments",
+          "Unlimited deployment assistance",
+          "Two years of free upgrades with multiple support sessions",
+          "Optional customization and handover training"
+        ],
+        "cta": "Talk to sales",
+        "link": "https://majora3.iinti.cn/majora-doc"
+      }
+    ],
+    "note": "All plans include free product upgrades and technical support during the licensing period. Additional node capacity can be added as needed.",
     "contact": {
-      "label": "Talk to sales",
+      "label": "Add us on WeChat for pricing",
       "wechat": "WeChat: iinti_cn"
     }
   },

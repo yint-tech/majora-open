@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
 
-type PricingRow = {
-  term: string;
+type PricingPlan = {
+  name: string;
+  tagline?: string;
   price: string;
-  limit: string;
-  deploy: string;
-  ip: string;
-  support: string;
+  billing?: string;
+  features?: string[];
+  cta?: string;
+  link?: string;
 };
 
 type PricingContact = {
@@ -18,8 +19,7 @@ const PricingPage = () => {
   const { t } = useTranslation();
 
   const intro = t('pricing.intro');
-  const headers = t('pricing.table.headers', { returnObjects: true }) as string[];
-  const rows = t('pricing.table.rows', { returnObjects: true }) as PricingRow[];
+  const plans = t('pricing.plans', { returnObjects: true }) as PricingPlan[];
   const note = t('pricing.note');
   const contact = t('pricing.contact', { returnObjects: true }) as PricingContact | string;
 
@@ -32,28 +32,37 @@ const PricingPage = () => {
         <p>{intro}</p>
       </header>
 
-      <section className="pricing-table-wrapper">
-        <table className="pricing-table">
-          <thead>
-            <tr>
-              {headers.map((header) => (
-                <th key={header}>{header}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.term}>
-                <td>{row.term}</td>
-                <td>{row.price}</td>
-                <td>{row.limit}</td>
-                <td>{row.deploy}</td>
-                <td>{row.ip}</td>
-                <td>{row.support}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <section className="pricing-grid">
+        {plans.map((plan, index) => (
+          <article key={plan.name} className={`pricing-card${index === 1 ? ' is-featured' : ''}`}>
+            <header className="pricing-card-header">
+              <h3>{plan.name}</h3>
+              {plan.tagline ? <p className="pricing-card-tagline">{plan.tagline}</p> : null}
+            </header>
+            <div className="pricing-card-price">
+              <span>{plan.price}</span>
+            </div>
+            {plan.billing ? <p className="pricing-card-billing">{plan.billing}</p> : null}
+            {plan.features?.length ? (
+              <ul className="pricing-card-features">
+                {plan.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            ) : null}
+            {plan.cta ? (
+              plan.link ? (
+                <a className="pricing-card-cta" href={plan.link} target="_blank" rel="noopener noreferrer">
+                  {plan.cta}
+                </a>
+              ) : (
+                <div className="pricing-card-cta">
+                  <span>{plan.cta}</span>
+                </div>
+              )
+            ) : null}
+          </article>
+        ))}
       </section>
 
       <section className="pricing-note">
