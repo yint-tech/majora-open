@@ -211,7 +211,7 @@ ul {
 .card-stack {
   position: relative;
   display: grid;
-  gap: 1.2rem;
+  gap: 1.6rem;
 }
 
 .card {
@@ -245,6 +245,7 @@ ul {
 .tertiary-card {
   transform: translate(-20px, 20px);
 }
+
 
 .section {
   padding: 4.5rem 0;

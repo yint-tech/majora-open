@@ -28,16 +28,13 @@ const renderWithLineBreaks = (text: string): ReactNode => {
   if (!text.includes('\n')) {
     return text;
   }
-
   return text.split('\n').map((part, index) => (
     <span key={`line-${index}`} className="line-break">
-      {part}
     </span>
   ));
 };
 
 const isExternalLink = (url: string): boolean => /^https?:\/\//.test(url);
-
 const LandingPage = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
@@ -74,12 +71,6 @@ const LandingPage = () => {
             <div className="hero-actions">
               <Link className="button primary" to={`${basePath}/docs/quick-start`}>
                 {t('hero.primaryCta')}
-              </Link>
-              <Link className="button ghost" to={`${basePath}/docs`}>
-                {t('hero.secondaryCta')}
-              </Link>
-              <Link className="button ghost small" to={`${basePath}/docs/introduction`}>
-                {t('hero.introCta')}
               </Link>
               <a
                 className="button ghost small"
@@ -207,6 +198,24 @@ const LandingPage = () => {
                         {client.secondaryAction}
                       </Link>
                     )
+                    <a
+                      className="button primary"
+                      href={client.primaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.primaryAction}
+                    </a>
+                  ) : null}
+                  {client.secondaryAction && client.secondaryLink ? (
+                    <a
+                      className="button ghost"
+                      href={client.secondaryLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {client.secondaryAction}
+                    </a>
                   ) : null}
                 </div>
               </article>
