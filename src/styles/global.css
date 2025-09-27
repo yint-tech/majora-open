@@ -168,6 +168,13 @@ ul {
   color: var(--muted);
   max-width: 32rem;
 }
+.hero-text .line-break {
+  display: block;
+}
+
+.hero-text .line-break + .line-break {
+  margin-top: 0.4rem;
+}
 
 .hero-text .eyebrow {
   color: var(--accent);
@@ -232,11 +239,11 @@ ul {
 }
 
 .secondary-card {
-  transform: translate(24px, -18px);
+  transform: translate(32px, -12px);
 }
 
 .tertiary-card {
-  transform: translate(-16px, 12px);
+  transform: translate(-20px, 20px);
 }
 
 .section {

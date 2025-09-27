@@ -4,7 +4,8 @@
     "steps": "Setup",
     "clients": "Clients",
     "contact": "Contact",
-    "docs": "Docs"
+    "docs": "Docs",
+    "github": "GitHub"
   },
   "language": {
     "label": "Language",
@@ -13,12 +14,13 @@
   },
   "hero": {
     "eyebrow": "Get Started · Advanced",
-    "title": "Launch your proxy service in one click and connect devices worldwide",
-    "description": "Majora centralises proxy infrastructure so you can federate diverse devices into a governed, scalable IP pool with ease.",
-    "primaryCta": "Try the demo account",
-    "secondaryCta": "Browse full docs",
+    "title": "Self-host a proxy cluster in one click\nConnect private network devices in seconds",
+    "description": "Aggregate global endpoints\nBuild a governed and scalable proxy IP pool",
+    "primaryCta": "Get started",
+    "secondaryCta": "Browse docs",
     "note": "Demo credentials: {{credentials}}",
-    "introCta": "Read the introduction"
+    "introCta": "Read the introduction",
+    "repoCta": "View on GitHub"
   },
   "cards": [
     {
@@ -64,7 +66,7 @@
       "Open the console: the first registered account becomes the admin user (demo credentials remain available)."
     ],
     "code": "yum install -y docker\ndocker pull registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\ndocker run -d --network host \\\n  -v ~/majora3-mysql-data:/var/lib/mysql \\\n  --name majora3 \\\n  registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\necho \"Browse http://127.0.0.1:6879 and login with majora/majora\"\necho \"The first registered account becomes the admin user\"",
-    "linkLabel": "Open the console"
+    "linkLabel": "View setup guide"
   },
   "clients": {
     "title": "Client access in minutes",
@@ -73,36 +75,34 @@
         "title": "VPS nodes",
         "description": "Linux binaries cover dedicated servers and cloud hosts with batch-friendly operations.",
         "primaryAction": "Setup guide",
-        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
+        "primaryLink": "/docs/quick-start"
       },
       {
         "title": "Router terminals",
         "description": "OpenWrt and other routers integrate quickly to onboard residential or office broadband.",
-        "primaryAction": "Request solution",
-        "primaryLink": "https://majora3.iinti.cn/majora-doc/"
+        "primaryAction": "Integration overview",
+        "primaryLink": "/docs/introduction"
       },
       {
         "title": "Android 4G devices",
         "description": "Hardened Android app turns phones and SBCs into stable 4G proxy exports.",
-        "primaryAction": "Download APK",
-        "primaryLink": "https://oss.iinti.cn/majora3/Majora3.apk",
-        "secondaryAction": "Install guide",
-        "secondaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
+        "primaryAction": "Usage guide",
+        "primaryLink": "/docs/android-client"
       }
     ]
   },
   "cta": {
     "title": "Build your enterprise proxy network",
     "description": "Deliver secure and stable connectivity backed by Majora's reliability and scalability.",
-    "action": "Open console"
+    "action": "View GitHub project"
   },
   "footer": {
     "products": "IINTI Portfolio | Majora · Sekiro · Malenia",
     "business": "Business",
     "businessDescription": "Scan the QR code or add WeChat {{wechat}} to join the community.",
     "docs": "Docs & Support",
-    "officialDoc": "Docs portal",
-    "deployOverview": "Deployment overview",
+    "officialDoc": "Docs hub",
+    "deployOverview": "Quick start",
     "contactEmail": "Email",
     "copyright": "© 2022-present IINTI"
   },

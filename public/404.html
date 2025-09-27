@@ -7,6 +7,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem('spa-redirect');
+        if (!redirect) {
+          sessionStorage.setItem('spa-redirect', window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <script src="./bundle.js"></script>
   </body>
 </html>

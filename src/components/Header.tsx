@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from './LanguageSwitcher';
+import { withBasePath } from '../utils/basePath';
 
 const Header = () => {
   const { t } = useTranslation();
@@ -31,6 +32,8 @@ const Header = () => {
     scrollToElement();
   };
 
+  const anchorHref = (section: string) => withBasePath(`${basePath}#${section}`);
+
   return (
     <header className="site-header">
       <div className="container nav">
@@ -41,17 +44,22 @@ const Header = () => {
           <span className="tagline">Proxy Platform</span>
         </div>
         <nav className="navigation" aria-label="Primary">
-          <a href={`${basePath}#features`} onClick={handleScroll('features')}>
+          <a href={anchorHref('features')} onClick={handleScroll('features')}>
             {t('nav.features')}
           </a>
-          <a href={`${basePath}#steps`} onClick={handleScroll('steps')}>
+          <a href={anchorHref('steps')} onClick={handleScroll('steps')}>
             {t('nav.steps')}
           </a>
-          <a href={`${basePath}#clients`} onClick={handleScroll('clients')}>
+          <a href={anchorHref('clients')} onClick={handleScroll('clients')}>
             {t('nav.clients')}
           </a>
-          <Link to={`${basePath}/docs`}>{t('nav.docs')}</Link>
-          <a href={`${basePath}#contact`} onClick={handleScroll('contact')}>
+          <a href="https://majora3.iinti.cn/majora-doc/" target="_blank" rel="noopener noreferrer">
+            {t('nav.docs')}
+          </a>
+          <a href="https://github.com/yint-tech/majora-open" target="_blank" rel="noopener noreferrer">
+            {t('nav.github')}
+          </a>
+          <a href={anchorHref('contact')} onClick={handleScroll('contact')}>
             {t('nav.contact')}
           </a>
         </nav>

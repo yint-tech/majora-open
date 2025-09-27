@@ -4,7 +4,8 @@
     "steps": "安装步骤",
     "clients": "多端接入",
     "contact": "联系与合作",
-    "docs": "文档"
+    "docs": "文档",
+    "github": "GitHub"
   },
   "language": {
     "label": "语言",
@@ -13,12 +14,13 @@
   },
   "hero": {
     "eyebrow": "开始使用 · 高阶深入",
-    "title": "一键完成代理服务搭建，秒级接入全球网络设备",
-    "description": "Majora 是面向代理业务的一体化集群控制中心，轻松聚合分散的网络设备并形成可监管、可扩展的代理 IP 池。",
-    "primaryCta": "立即体验测试账户",
-    "secondaryCta": "浏览完整文档",
+    "title": "一键自建代理服务集群\n秒级接入自主网络设备",
+    "description": "聚合全球网络终端\n构建可监管、可扩展的代理 IP 池",
+    "primaryCta": "快速开始",
+    "secondaryCta": "浏览文档",
     "note": "测试账号：{{credentials}}",
-    "introCta": "阅读系统导言"
+    "introCta": "阅读系统导言",
+    "repoCta": "GitHub 仓库"
   },
   "cards": [
     {
@@ -64,7 +66,7 @@
       "登录控制台：首个注册用户即为 admin 管理账号，亦可使用测试账号体验。"
     ],
     "code": "yum install -y docker\ndocker pull registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\ndocker run -d --network host \\\n  -v ~/majora3-mysql-data:/var/lib/mysql \\\n  --name majora3 \\\n  registry.cn-beijing.aliyuncs.com/iinti/majora3:all-in-one\necho \"访问 http://127.0.0.1:6879 使用账号 majora/majora 登录\"\necho \"首个注册用户即为 admin 管理账号\"",
-    "linkLabel": "打开管理后台"
+    "linkLabel": "查看安装指引"
   },
   "clients": {
     "title": "多端客户端快速接入",
@@ -73,36 +75,34 @@
         "title": "VPS 节点",
         "description": "Linux 一键客户端覆盖各类服务器与云主机，支持批量部署与脚本运维。",
         "primaryAction": "部署指南",
-        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
+        "primaryLink": "/docs/quick-start"
       },
       {
         "title": "路由器终端",
         "description": "OpenWrt 等路由环境可快速集成，把家庭/企业宽带纳入代理池。",
-        "primaryAction": "获取方案",
-        "primaryLink": "https://majora3.iinti.cn/majora-doc/"
+        "primaryAction": "接入说明",
+        "primaryLink": "/docs/introduction"
       },
       {
         "title": "Android 4G 设备",
         "description": "Android 客户端稳定运行在手机或开发板，实现 4G 流量代理输出。",
-        "primaryAction": "下载 APK",
-        "primaryLink": "https://oss.iinti.cn/majora3/Majora3.apk",
-        "secondaryAction": "安装指南",
-        "secondaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
+        "primaryAction": "使用指南",
+        "primaryLink": "/docs/android-client"
       }
     ]
   },
   "cta": {
     "title": "开始构建您的企业级代理网络",
     "description": "依托 Majora 的高可靠性与灵活拓展能力，快速上线代理 IP 服务，为业务提供安全、稳定的网络支撑。",
-    "action": "登录控制台"
+    "action": "查看 GitHub 项目"
   },
   "footer": {
     "products": "因体关联产品 | Majora · Sekiro · Malenia",
     "business": "商务合作",
     "businessDescription": "扫描商务二维码或添加微信 {{wechat}} 加入交流群。",
     "docs": "文档与支持",
-    "officialDoc": "官方文档",
-    "deployOverview": "部署概览",
+    "officialDoc": "文档中心",
+    "deployOverview": "快速开始",
     "contactEmail": "联系邮箱",
     "copyright": "© 2022-至今 IINTI"
   },
