@@ -47,7 +47,7 @@
     "items": [
       {
         "title": "使用简单",
-        "description": "Host 模式一键启动服务，内置 MySQL 数据库，无需额外配置。"
+        "description": "Host 模式一键启动服务，内置 MySQL 数据库，无需额外配置。（ 超大流量场景建议使用外置数据库，裸机部署。 ）"
       },
       {
         "title": "多种网络终端",
@@ -154,7 +154,7 @@
     "items": [
       {
         "title": "Malenia 代理 IP 网关平台",
-        "description": "分割代理采购和代理使用，使用ip资源的人看不到采购的账号资产、ip来源，保护资产资源的安全。",
+        "description": "分割代理采购和代理使用，保护IP资产资源的安全。",
         "link": "https://malenia.iinti.cn/malenia-doc/",
         "label": "访问文档"
       },

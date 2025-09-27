@@ -120,11 +120,11 @@ const LandingPage = () => {
                 {t('hero.repoCta')}
               </a>
             </div>
-            <p className="note">
+            {/* <p className="note">
               {t('hero.note', {
                 credentials: 'majora / majora',
               })}
-            </p>
+            </p> */}
           </div>
           <div className="hero-visual">
             <div className="card-stack">
