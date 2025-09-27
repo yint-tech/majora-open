@@ -51,9 +51,11 @@ const Header = () => {
           <a href={toAbsoluteUrl(`${basePath}#clients`)} onClick={handleScroll('clients')}>
             {t('nav.clients')}
           </a>
-          <Link to={`${basePath}/docs`}>{t('nav.docs')}</Link>
-          <a href={toAbsoluteUrl(`${basePath}#contact`)} onClick={handleScroll('contact')}>
-            {t('nav.contact')}
+          <a href="https://majora3.iinti.cn/majora-doc/" target="_blank" rel="noopener noreferrer">
+            {t('nav.docs')}
+          </a>
+          <a href="https://github.com/yint-tech/majora-open" target="_blank" rel="noopener noreferrer">
+            {t('nav.github')}
           </a>
         </nav>
         <LanguageSwitcher />

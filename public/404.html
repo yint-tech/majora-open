@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Majora3 Proxy Cluster</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem('spa-redirect');
+        if (!redirect) {
+          sessionStorage.setItem('spa-redirect', window.location.pathname + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
+    <script src="./bundle.js"></script>
+  </body>
+</html>

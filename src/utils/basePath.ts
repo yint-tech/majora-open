@@ -1,6 +1,7 @@
 const SUPPORTED_LOCALES = new Set(['zh-CN', 'en']);
 
-const detectAppBasePath = (): string => {
+
+const detectBasePath = (): string => {
   if (typeof window === 'undefined') {
     return '';
   }
@@ -15,7 +16,6 @@ const detectAppBasePath = (): string => {
   if (localeIndex === 0) {
     return '';
   }
-
   if (window.location.hostname.endsWith('github.io') && segments.length > 0) {
     return `/${segments[0]}`;
   }
@@ -23,6 +23,12 @@ const detectAppBasePath = (): string => {
   return '';
 };
 
+export const appBasePath = detectBasePath();
+
+export const withBasePath = (path: string): string => {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return `${appBasePath}${normalized}`.replace(/\/+/g, '/');
+};
 export const appBasePath = detectAppBasePath();
 
 export const toAbsoluteUrl = (targetPath: string): string => {
