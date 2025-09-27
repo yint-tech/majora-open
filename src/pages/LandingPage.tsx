@@ -24,6 +24,11 @@ type ConceptItem = {
   description: string;
 };
 
+type TagItem = {
+  id: string;
+  label: string;
+};
+
 type ProductLinkItem = {
   title: string;
   description: string;
@@ -60,6 +65,7 @@ const LandingPage = () => {
   const stepSummary = t('steps.summary', { returnObjects: true }) as string[];
   const stepCode = t('steps.code') as string;
   const stepLinkLabel = t('steps.linkLabel', { defaultValue: '' }) as string;
+  const heroTags = t('hero.tags', { returnObjects: true, defaultValue: [] }) as TagItem[];
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string } | undefined;
@@ -72,6 +78,13 @@ const LandingPage = () => {
     }
   }, [location.state]);
 
+  const scrollToSection = (targetId: string) => {
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <div>
       <section className="hero">
@@ -80,10 +93,24 @@ const LandingPage = () => {
             {heroEyebrow ? <p className="eyebrow">{heroEyebrow}</p> : null}
             <h1>{renderWithLineBreaks(t('hero.title'))}</h1>
             <p className="lead">{renderWithLineBreaks(t('hero.description'))}</p>
+            {heroTags.length > 0 ? (
+              <div className="hero-tags" aria-label={t('nav.features')}>
+                {heroTags.map((tag) => (
+                  <button
+                    key={tag.id}
+                    type="button"
+                    className="hero-tag"
+                    onClick={() => scrollToSection(tag.id)}
+                  >
+                    #{tag.label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
             <div className="hero-actions">
-              <Link className="button primary" to={`${basePath}/docs/quick-start`}>
+              <button type="button" className="button primary" onClick={() => scrollToSection('steps')}>
                 {t('hero.primaryCta')}
-              </Link>
+              </button>
               <a
                 className="button ghost small"
                 href="https://github.com/yint-tech/majora-open"
@@ -157,9 +184,9 @@ const LandingPage = () => {
               <code>{stepCode}</code>
             </pre>
             {stepLinkLabel ? (
-              <Link className="button ghost" to={`${basePath}/docs/quick-start`}>
+              <button type="button" className="button ghost" onClick={() => scrollToSection('clients')}>
                 {stepLinkLabel}
-              </Link>
+              </button>
             ) : null}
           </div>
         </div>

@@ -19,6 +19,12 @@
     "primaryCta": "Get started",
     "secondaryCta": "Browse docs",
     "note": "Demo credentials: {{credentials}}",
+    "tags": [
+      { "id": "features", "label": "Product advantages" },
+      { "id": "concepts", "label": "Core capabilities" },
+      { "id": "steps", "label": "Installation" },
+      { "id": "clients", "label": "Clients" }
+    ],
     "introCta": "Read the introduction",
     "repoCta": "View on GitHub"
   },
@@ -75,19 +81,19 @@
         "title": "VPS nodes",
         "description": "Linux binaries cover dedicated servers and cloud hosts with batch-friendly operations.",
         "primaryAction": "Setup guide",
-        "primaryLink": "/docs/quick-start"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "Router terminals",
         "description": "OpenWrt and other routers integrate quickly to onboard residential or office broadband.",
         "primaryAction": "Integration overview",
-        "primaryLink": "/docs/introduction"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "Android 4G devices",
         "description": "Hardened Android app turns phones and SBCs into stable 4G proxy exports.",
         "primaryAction": "Usage guide",
-        "primaryLink": "/docs/android-client"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
       }
     ]
   },

@@ -157,6 +157,32 @@ ul {
   align-items: center;
 }
 
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.hero-tag {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.hero-tag:hover,
+.hero-tag:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  color: var(--text);
+  outline: none;
+}
+
 @media (max-width: 900px) {
   .hero-content {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

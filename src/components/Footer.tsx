@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+
+const DOC_PORTAL_URL = 'https://majora3.iinti.cn/majora-doc/#/';
+const QUICK_START_URL = 'https://majora3.iinti.cn/majora-doc/#/quick-start';
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
-  const currentLocale = i18n.language === 'en' ? 'en' : 'zh-CN';
-  const basePath = `/${currentLocale}`;
+  const { t } = useTranslation();
 
   return (
     <footer id="contact" className="site-footer">
@@ -21,10 +21,14 @@ const Footer = () => {
           <h4>{t('footer.docs')}</h4>
           <ul>
             <li>
-              <Link to={`${basePath}/docs`}>{t('footer.officialDoc')}</Link>
+              <a href={DOC_PORTAL_URL} target="_blank" rel="noopener noreferrer">
+                {t('footer.officialDoc')}
+              </a>
             </li>
             <li>
-              <Link to={`${basePath}/docs/quick-start`}>{t('footer.deployOverview')}</Link>
+              <a href={QUICK_START_URL} target="_blank" rel="noopener noreferrer">
+                {t('footer.deployOverview')}
+              </a>
             </li>
             <li>
               <a href="mailto:codelover@qq.cn">{t('footer.contactEmail')}</a>

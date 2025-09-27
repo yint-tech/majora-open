@@ -37,9 +37,9 @@ const Header = () => {
       <div className="container nav">
         <div className="branding">
           <Link to={basePath} className="logo" aria-label="Majora">
-            Majora
+            Majora3
           </Link>
-          <span className="tagline">Proxy Platform</span>
+          <span className="tagline">IP Proxy Platform</span>
         </div>
         <nav className="navigation" aria-label="Primary">
           <a href={toAbsoluteUrl(`${basePath}#features`)} onClick={handleScroll('features')}>

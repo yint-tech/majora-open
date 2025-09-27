@@ -13,12 +13,18 @@
     "en": "English"
   },
   "hero": {
-    "eyebrow": "",
+    "eyebrow": "majora3",
     "title": "一键自建代理服务集群，\n秒级接入自主网络设备。",
-    "description": "聚合全球网络终端，构建可监管、可扩展的代理 IP 池。",
+    "description": "聚合全平台网络终端，构建可监管、可扩展的代理 IP 池。",
     "primaryCta": "快速开始",
     "secondaryCta": "浏览文档",
     "note": "测试账号：{{credentials}}",
+    "tags": [
+      { "id": "features", "label": "产品优势" },
+      { "id": "concepts", "label": "核心能力" },
+      { "id": "steps", "label": "安装部署" },
+      { "id": "clients", "label": "多端接入" }
+    ],
     "introCta": "阅读系统导言",
     "repoCta": "GitHub 仓库"
   },
@@ -41,11 +47,11 @@
     "items": [
       {
         "title": "使用简单",
-        "description": "Host 模式一键启动服务，自动完成代理节点注册与隧道打通，极大降低部署门槛。"
+        "description": "Host 模式一键启动服务，内置 MySQL 数据库，无需额外配置。"
       },
       {
         "title": "多种网络终端",
-        "description": "支持 PC、服务器、Android、路由器等多种网络设备，同时支持 API 集成到业务系统。"
+        "description": "支持 PC、VPS 服务器、Android、路由器等多种网络设备。"
       },
       {
         "title": "管理与控制",
@@ -75,19 +81,19 @@
         "title": "VPS 节点",
         "description": "Linux 一键客户端覆盖各类服务器与云主机，支持批量部署与脚本运维。",
         "primaryAction": "部署指南",
-        "primaryLink": "/docs/quick-start"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "路由器终端",
         "description": "OpenWrt 等路由环境可快速集成，把家庭/企业宽带纳入代理池。",
         "primaryAction": "接入说明",
-        "primaryLink": "/docs/introduction"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_01_bin.html"
       },
       {
         "title": "Android 4G 设备",
         "description": "Android 客户端稳定运行在手机或开发板，实现 4G 流量代理输出。",
         "primaryAction": "使用指南",
-        "primaryLink": "/docs/android-client"
+        "primaryLink": "https://majora3.iinti.cn/majora-doc/01_deploy/02_client_02_android.html"
       }
     ]
   },
@@ -159,11 +165,11 @@
       },
       {
         "title": "重播机制",
-        "description": "通过重拨、飞行模式等方式刷新出口 IP，重播计划精细控制触发范围与频率。"
+        "description": "通过重拨、飞行模式等方式刷新出口 IP，后台管控重播计划精细控制触发范围与频率。"
       },
       {
-        "title": "安全与性能",
-        "description": "双账号治理、ACL 审计与事件驱动架构，配套全链路监控实现 200M 带宽稳定转发。"
+        "title": "极致性能",
+        "description": "异步 NIO 架构，确保高吞吐低延迟，单节点 200M 带宽满负载运行，百万级连接无压力。"
       }
     ]
   }
