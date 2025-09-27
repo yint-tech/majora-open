@@ -1,7 +1,7 @@
 const SUPPORTED_LOCALES = new Set(['zh-CN', 'en']);
 
 
-const detectBasePath = (): string => {
+const detectAppBasePath = (): string => {
   if (typeof window === 'undefined') {
     return '';
   }
@@ -23,13 +23,12 @@ const detectBasePath = (): string => {
   return '';
 };
 
-export const appBasePath = detectBasePath();
+export const appBasePath = detectAppBasePath();
 
 export const withBasePath = (path: string): string => {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${appBasePath}${normalized}`.replace(/\/+/g, '/');
 };
-export const appBasePath = detectAppBasePath();
 
 export const toAbsoluteUrl = (targetPath: string): string => {
   const [pathPart, hashPart] = targetPath.split('#');

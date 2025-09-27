@@ -24,12 +24,22 @@ type ConceptItem = {
   description: string;
 };
 
+type ProductLinkItem = {
+  title: string;
+  description: string;
+  link: string;
+  label: string;
+};
+
 const renderWithLineBreaks = (text: string): ReactNode => {
   if (!text.includes('\n')) {
     return text;
   }
-  return text.split('\n').map((part, index) => (
+  const parts = text.split('\n');
+  return parts.map((part, index) => (
     <span key={`line-${index}`} className="line-break">
+      {part}
+      {index < parts.length - 1 ? <br /> : null}
     </span>
   ));
 };
@@ -41,10 +51,12 @@ const LandingPage = () => {
   const currentLocale = i18n.language === 'en' ? 'en' : 'zh-CN';
   const basePath = `/${currentLocale}`;
 
+  const heroEyebrow = t('hero.eyebrow');
   const cards = t('cards', { returnObjects: true }) as FeatureItem[];
   const features = t('features.items', { returnObjects: true }) as FeatureItem[];
   const clients = t('clients.items', { returnObjects: true }) as ClientItem[];
   const concepts = t('concepts.items', { returnObjects: true }) as ConceptItem[];
+  const otherProducts = t('otherProducts.items', { returnObjects: true }) as ProductLinkItem[];
   const stepSummary = t('steps.summary', { returnObjects: true }) as string[];
   const stepCode = t('steps.code') as string;
   const stepLinkLabel = t('steps.linkLabel', { defaultValue: '' }) as string;
@@ -65,7 +77,7 @@ const LandingPage = () => {
       <section className="hero">
         <div className="container hero-content">
           <div className="hero-text">
-            <p className="eyebrow">{t('hero.eyebrow')}</p>
+            {heroEyebrow ? <p className="eyebrow">{heroEyebrow}</p> : null}
             <h1>{renderWithLineBreaks(t('hero.title'))}</h1>
             <p className="lead">{renderWithLineBreaks(t('hero.description'))}</p>
             <div className="hero-actions">
@@ -198,24 +210,6 @@ const LandingPage = () => {
                         {client.secondaryAction}
                       </Link>
                     )
-                    <a
-                      className="button primary"
-                      href={client.primaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.primaryAction}
-                    </a>
-                  ) : null}
-                  {client.secondaryAction && client.secondaryLink ? (
-                    <a
-                      className="button ghost"
-                      href={client.secondaryLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {client.secondaryAction}
-                    </a>
                   ) : null}
                 </div>
               </article>
@@ -224,24 +218,30 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="section cta" aria-labelledby="cta-title">
-        <div className="container">
-          <div className="cta-card">
-            <div>
-              <h2 id="cta-title">{t('cta.title')}</h2>
-              <p>{t('cta.description')}</p>
+      {otherProducts.length > 0 ? (
+        <section className="section other-products">
+          <div className="container">
+            <h2>{t('otherProducts.title')}</h2>
+            <p className="section-intro">{t('otherProducts.intro')}</p>
+            <div className="product-grid">
+              {otherProducts.map((product) => (
+                <article key={product.title} className="product-card">
+                  <h3>{product.title}</h3>
+                  <p>{product.description}</p>
+                  <a
+                    className="button ghost"
+                    href={product.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {product.label}
+                  </a>
+                </article>
+              ))}
             </div>
-            <a
-              className="button primary"
-              href="https://github.com/yint-tech/majora-open"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t('cta.action')}
-            </a>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </div>
   );
 };

@@ -153,8 +153,14 @@ ul {
 .hero-content {
   display: grid;
   gap: 4rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: minmax(340px, 1.35fr) minmax(260px, 0.65fr);
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
 .hero-text h1 {
@@ -430,6 +436,35 @@ pre code {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
+}
+
+.other-products {
+  background: rgba(10, 15, 30, 0.88);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.6rem;
+}
+
+.product-card {
+  padding: 2rem;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.product-card h3 {
+  margin: 0;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .cta {

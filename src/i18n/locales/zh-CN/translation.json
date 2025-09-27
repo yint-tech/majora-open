@@ -13,9 +13,9 @@
     "en": "English"
   },
   "hero": {
-    "eyebrow": "开始使用 · 高阶深入",
+    "eyebrow": "",
     "title": "一键自建代理服务集群，\n秒级接入自主网络设备。",
-    "description": "聚合全球网络终端\n构建可监管、可扩展的代理 IP 池",
+    "description": "聚合全球网络终端，构建可监管、可扩展的代理 IP 池。",
     "primaryCta": "快速开始",
     "secondaryCta": "浏览文档",
     "note": "测试账号：{{credentials}}",
@@ -91,15 +91,39 @@
       }
     ]
   },
+  "otherProducts": {
+    "title": "更多产品",
+    "intro": "探索 IINTI 生态中的其他产品与文档。",
+    "items": [
+      {
+        "title": "Malenia 代理 IP 网关平台",
+        "description": "代理 IP 网关平台的官方文档中心。",
+        "link": "https://malenia.iinti.cn/malenia-doc/",
+        "label": "访问文档"
+      },
+      {
+        "title": "Sekiro",
+        "description": "一个多语言的、分布式、网络拓扑无关的服务发布平台。",
+        "link": "https://sekiro.iinti.cn/sekiro-doc/",
+        "label": "访问文档"
+      },
+      {
+        "title": "IINTI 官网",
+        "description": "开源共创，与您共赢。数据挖掘专业软件供应商。",
+        "link": "https://iinti.cn/zh-cn/",
+        "label": "访问官网"
+      }
+    ]
+  },
   "cta": {
-    "title": "开始构建您的企业级代理网络",
+    "title": "",
     "description": "依托 Majora 的高可靠性与灵活拓展能力，快速上线代理 IP 服务，为业务提供安全、稳定的网络支撑。",
     "action": "查看 GitHub 项目"
   },
   "footer": {
-    "products": "因体关联产品 | Majora · Sekiro · Malenia",
+    "products": "Power by 因体科技",
     "business": "商务合作",
-    "businessDescription": "扫描商务二维码或添加微信 {{wechat}} 加入交流群。",
+    "businessDescription": "添加微信 {{wechat}} 加入交流群。",
     "docs": "文档与支持",
     "officialDoc": "文档中心",
     "deployOverview": "快速开始",
@@ -123,7 +147,7 @@
   },
   "concepts": {
     "title": "核心能力导读",
-    "intro": "从五个核心维度快速理解 Majora3 如何帮助你构建可控、可扩展的代理 IP 池。",
+    "intro": "从四大核心维度快速理解 Majora3 如何帮助你构建可控、可扩展的代理 IP 池。",
     "items": [
       {
         "title": "IP 池模型",

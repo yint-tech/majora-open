@@ -13,8 +13,8 @@
     "en": "English"
   },
   "hero": {
-    "eyebrow": "Get Started · Advanced",
-    "title": "Self-host a proxy cluster in one click\nConnect private network devices in seconds",
+    "eyebrow": "",
+    "title": "Self-host a proxy cluster in one click, connect private network devices in seconds",
     "description": "Aggregate global endpoints\nBuild a governed and scalable proxy IP pool",
     "primaryCta": "Get started",
     "secondaryCta": "Browse docs",
@@ -91,15 +91,39 @@
       }
     ]
   },
+  "otherProducts": {
+    "title": "More from IINTI",
+    "intro": "Explore additional products and documentation across the IINTI ecosystem.",
+    "items": [
+      {
+        "title": "Malenia Proxy IP Gateway",
+        "description": "Documentation for the Malenia proxy IP gateway platform.",
+        "link": "https://malenia.iinti.cn/malenia-doc/",
+        "label": "Open docs"
+      },
+      {
+        "title": "Sekiro",
+        "description": "A multilingual, distributed, topology-agnostic service publishing platform.",
+        "link": "https://sekiro.iinti.cn/sekiro-doc/",
+        "label": "Open docs"
+      },
+      {
+        "title": "IINTI Official Site",
+        "description": "Open-source co-creation to win together. Professional data-mining software provider.",
+        "link": "https://iinti.cn/",
+        "label": "Visit site"
+      }
+    ]
+  },
   "cta": {
-    "title": "Build your enterprise proxy network",
+    "title": "",
     "description": "Deliver secure and stable connectivity backed by Majora's reliability and scalability.",
     "action": "View GitHub project"
   },
   "footer": {
-    "products": "IINTI Portfolio | Majora · Sekiro · Malenia",
+    "products": "Powered by iinti Technology",
     "business": "Business",
-    "businessDescription": "Scan the QR code or add WeChat {{wechat}} to join the community.",
+    "businessDescription": "add WeChat {{wechat}} to join the community.",
     "docs": "Docs & Support",
     "officialDoc": "Docs hub",
     "deployOverview": "Quick start",
@@ -123,7 +147,7 @@
   },
   "concepts": {
     "title": "Key Pillars at a Glance",
-    "intro": "Understand Majora3 across five pillars to deploy and scale a controllable proxy network.",
+    "intro": "Understand Majora3 across four pillars to deploy and scale a controllable proxy network.",
     "items": [
       {
         "title": "Pool strategies",

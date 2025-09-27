@@ -15,14 +15,11 @@ const DocPage = () => {
   const locale: DocRecord['locale'] = lang === 'en' ? 'en' : 'zh-CN';
   const basePath = `/${locale}`;
 
-  const slug = params['*'];
-
   const doc = useMemo(() => {
     if (!slug) {
       return undefined;
     }
-    const normalizedSlug = slug.replace(/\/+$/, '');
-    return getDoc(normalizedSlug, locale) ?? getFallbackDoc(normalizedSlug);
+    return getDoc(slug, locale) ?? getFallbackDoc(slug);
   }, [slug, locale]);
 
   const isFallback = doc ? doc.locale !== locale : false;

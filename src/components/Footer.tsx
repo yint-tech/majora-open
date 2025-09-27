@@ -27,7 +27,7 @@ const Footer = () => {
               <Link to={`${basePath}/docs/quick-start`}>{t('footer.deployOverview')}</Link>
             </li>
             <li>
-              <a href="mailto:contact@iinti.cn">{t('footer.contactEmail')}</a>
+              <a href="mailto:codelover@qq.cn">{t('footer.contactEmail')}</a>
             </li>
           </ul>
         </div>
