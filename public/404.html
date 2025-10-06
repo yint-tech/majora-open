@@ -3,12 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8P17SLG84"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-L8P17SLG84');
+    </script>
     <title>Majora3 IP Proxy Cluster</title>
   </head>
   <body>
     <div id="root"></div>
     <script>
       (function () {
+        var verificationPath = '/googledff88e330019f89c.html';
+        var isVerificationRequest = window.location.pathname.slice(-verificationPath.length) === verificationPath;
+
+        if (isVerificationRequest) {
+          document.open();
+          document.write('google-site-verification: googledff88e330019f89c.html');
+          document.close();
+          return;
+        }
+
         var redirect = sessionStorage.getItem('spa-redirect');
         if (!redirect) {
           sessionStorage.setItem('spa-redirect', window.location.pathname + window.location.search + window.location.hash);
