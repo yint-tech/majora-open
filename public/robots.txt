@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yint-tech.github.io/majora-open/sitemap.xml
